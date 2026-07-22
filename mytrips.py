@@ -49,6 +49,13 @@ class MyTripsPage:
         self.root.mainloop()
 
 
+    def open_reviews(self):
+
+        self.root.destroy()
+
+        from reviews import ReviewsPage
+
+        ReviewsPage()
 
     def create_ui(self):
 
@@ -116,6 +123,20 @@ class MyTripsPage:
         ).grid(
             row=0,
             column=1,
+            padx=10
+        )
+
+
+        tk.Button(
+            button_frame,
+            text="Give Review",
+            bg="blue",
+            fg="white",
+            width=18,
+            command=self.open_reviews
+        ).grid(
+            row=0,
+            column=2,
             padx=10
         )
 
